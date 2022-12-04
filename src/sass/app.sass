@@ -3,4 +3,754 @@
 @import 'base/print'
 @import 'base/fonts'
 @import 'base/mixins'
+@import 'base/media'
 @import 'dirty/hacks'
+
+*::-webkit-input-placeholder
+  color: #666
+  opacity: 1
+
+*:-moz-placeholder
+  color: #666s-review
+  opacity: 1
+
+*::-moz-placeholder
+  color: #666
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: #666
+  opacity: 1
+
+html, body
+  height: 100%
+
+body.ishome
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.75
+  overflow: hidden
+  opacity: 1
+  background: #000
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+
+h1
+  font-family: 'Open sans', sans-serif
+  font-size: 4em
+  text-align: center
+  font-weight: 300
+  color: #fff
+  text-shadow: 1px 1px 20px hsla(0, 100%, 100%, 0.3)
+  margin: 0
+  padding-top: 5%
+
+.name
+  padding-top: 100px
+  padding-bottom: 20px
+  border-bottom: 1px gold solid
+
+.info
+  padding-top: 30px
+  font-size: 1.5em
+  text-align: center
+  text-transform: uppercase
+  color: #999
+
+.owl-carousel
+  padding-top: 70px
+  padding-left: 150px
+  h1
+    font-family: 'Book Antiqua'
+    font-size: 3em
+    text-transform: uppercase
+    font-weight: thin
+    padding-bottom: 40px
+    color: #F4A460
+
+.social-networks
+  margin: 0 0 35px
+  padding: 0
+  font-size: 0
+  text-align: center
+  li
+    display: block
+  a
+    display: block
+    position: relative
+    margin: 0 7px
+    width: 68px
+    height: 68px
+    font-size: 0
+    line-height: 0
+    text-align: center
+    text-decoration: none
+    &:before
+      content: ""
+      position: absolute
+      top: 50%
+      left: 50%
+      width: 100%
+      height: 100%
+      margin-top: -50%
+      margin-left: -50%
+      border-radius: 100px
+      background-color: #1f2027
+      -webkit-transition: all 400ms
+      transition: all 400ms
+    &:after
+      position: relative
+      display: block
+      font-family: 'icomoon'
+      speak: none
+      font-style: normal
+      font-weight: normal
+      font-variant: normal
+      text-transform: none
+      line-height: 1
+      color: #fff
+      font-size: 26px
+      line-height: 66px
+    &:hover, &:focus
+      text-decoration: none
+  &.spin-icon a
+    &:hover:after, &:focus:after
+      -webkit-transition: -webkit-transform 0.4s ease-out
+      transition: -webkit-transform 0.4s ease-out
+      transition: transform 0.4s ease-out
+      transition: transform 0.4s ease-out, -webkit-transform 0.4s ease-out
+      -webkit-transform: rotateZ(360deg)
+      transform: rotateZ(360deg)
+  &.square a
+    &:hover:before, &:focus:before
+      border-radius: 0
+  &.bounce a
+    &:hover, &:focus
+      -webkit-animation: bounce 1s
+      animation: bounce 1s
+  .icon-linkedin
+    &:after
+      content: ""
+    &:hover:before, &:focus:before
+      background: #0077b5
+  .icon-facebook
+    &:after
+      content: ""
+    &:hover:before, &:focus:before
+      background: #3b5998
+  .icon-twitter
+    &:after
+      content: ""
+    &:hover:before, &:focus:before
+      background: #00b0ed
+  .icon-github
+    &:after
+      content: ""
+    &:hover:before, &:focus:before
+      background: #4183c4
+  .icon-instagram
+    &:after
+      content: ""
+    &:hover:before, &:focus:before
+      background: #3f729b
+  .icon-vimeo
+    &:after
+      content: ""
+    &:hover:before, &:focus:before
+      background: #1ab7ea
+  .icon-twitch
+    &:after
+      content: ""
+    &:hover:before, &:focus:before
+      background: #6441a5
+  .icon-pinterest
+    &:after
+      content: ""
+    &:hover:before, &:focus:before
+      background: #cc2127
+
+@keyframes bounce
+  0%, 20%, 53%, 80%, 100%
+    -webkit-transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+  40%
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    -webkit-transform: translate3d(0, -6px, 0)
+    transform: translate3d(0, -6px, 0)
+
+  70%
+    -webkit-transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    transition-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    -webkit-transform: translate3d(0, -4px, 0)
+    transform: translate3d(0, -4px, 0)
+
+  90%
+    -webkit-transform: translate3d(0, -2px, 0)
+    transform: translate3d(0, -2px, 0)
+
+
+.accelerate
+  transform: translate3d(0, 0, 0)
+  transform-style: preserve-3d
+  backface-visibility: hidden
+
+.center
+  max-width: 400px
+  margin: 0 auto
+  width: 88%
+
+.wrapper
+  min-height: 460px
+  position: absolute
+  overflow: hidden
+  display: table
+  height: 100%
+  width: 100%
+  left: 0
+  top: 0
+
+.cell
+  vertical-align: middle
+  display: table-cell
+
+.scene, .layer
+  display: block
+  height: 100%
+  width: 100%
+  padding: 0
+  margin: 0
+
+.scene
+  min-height: 460px
+  position: relative
+  overflow: hidden
+
+.layer
+  position: absolute
+  div
+    transform: translate3d(0, 0, 0)
+    transform-style: preserve-3d
+    backface-visibility: hidden
+
+.title
+  font-size: 3em
+  text-shadow: 0 8px 6px rgba(0, 0, 0, 0.6)
+  margin-top: -0.7em
+  position: absolute
+  width: 100%
+  top: 42%
+
+.bg
+  bottom: 22px !important
+  background-size: cover
+  position: absolute
+  width: 110%
+  left: -5%
+  top: -5%
+  background: linear-gradient(to top, #300000 10%, #140000 90%)
+  #stars
+    width: 100%
+    height: 70%
+
+.cloud
+  bottom: 22px
+  background-size: cover
+  position: absolute
+  width: 110%
+  left: -5%
+  top: -5%
+  opacity: 0.3
+  background: transparent url(http://www.script-tutorials.com/demos/360/images/clouds3.png) repeat top center
+  z-index: 3
+  animation: move-clouds-back 600s linear infinite
+
+.moon
+  position: absolute
+  top: 100%
+  left: -25%
+  width: 16.371em
+  height: 16.474em
+  margin-top: -1.737em
+  margin-left: -16.371em
+  transform-origin: 450% 150%
+  animation: orbit 62.69977s linear infinite
+  opacity: 0.5
+  &::before, &::after
+    content: ''
+    position: absolute
+    width: 3.474em
+    height: 3.474em
+    margin-left: -3.474em
+    border-radius: 100%
+  &::before
+    background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/82473/moon-transparent.png")
+    background-size: 100% auto
+    background-repeat: no-repeat
+
+.tree
+  transform-origin: 50% 90%
+  animation: tree 5s 0.1s infinite alternate cubic-bezier(0.455, 0.03, 0.515, 0.955)
+  margin: 0px -64px
+  background-size: 128px 224px
+  height: 224px
+  width: 128px
+  background-repeat: no-repeat
+  bottom: 64px
+  position: absolute
+  &.tree-1
+    right: 100%
+    background-image: url(../images/scene/tree1.png)
+  &.tree-2
+    right: 80%
+    background-image: url(../images/scene/tree2.png)
+  &.tree-3
+    right: 70%
+    background-image: url(../images/scene/tree3.png)
+  &.tree-4
+    right: 60%
+    background-image: url(../images/scene/tree4.png)
+  &.tree-5
+    right: 65%
+    background-image: url(../images/scene/tree5.png)
+  &.tree-6
+    right: 95%
+    background-image: url(../images/scene/tree4.png)
+
+.grass
+  background: transparent repeat-x
+  position: absolute
+  width: 300%
+  left: -100%
+  animation: grass 8s 0.1s infinite linear
+  bottom: 140px
+  margin: 0px 0px
+  background-position: center bottom
+  background-size: auto 101%
+  height: 16px
+  &:after
+    background-color: #000000
+    position: absolute
+    display: block
+    content: ""
+    height: 500px
+    width: 100%
+    top: 100%
+    left: 0
+  &.grass-1
+    background-image: url(../images/scene/grass1.png)
+  &.grass-2
+    background-image: url(../images/scene/grass2.png)
+  &.d-20
+    animation: grass 7.55556s 0.1s infinite linear
+    bottom: 120px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 32px
+    &:after
+      height: 128px
+  &.d-30
+    animation: grass 7.11111s 0.1s infinite linear
+    bottom: 100px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 48px
+    &:after
+      height: 112px
+  &.d-40
+    animation: grass 6.66667s 0.1s infinite linear
+    bottom: 80px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 64px
+    &:after
+      height: 96px
+  &.d-50
+    animation: grass 6.22222s 0.1s infinite linear
+    bottom: 60px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 80px
+    &:after
+      height: 80px
+  &.d-60
+    animation: grass 5.77778s 0.1s infinite linear
+    bottom: 40px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 96px
+    &:after
+      height: 64px
+  &.d-70
+    animation: grass 5.33333s 0.1s infinite linear
+    bottom: 20px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 112px
+    &:after
+      height: 48px
+  &.d-80
+    animation: grass 4.88889s 0.1s infinite linear
+    bottom: 0px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 128px
+    &:after
+      height: 32px
+  &.d-90
+    -webkit-animation: grass 4.44444s 0.1s infinite linear
+    -moz-animation: grass 4.44444s 0.1s infinite linear
+    animation: grass 4.44444s 0.1s infinite linear
+    bottom: -20px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 144px
+    &:after
+      height: 16px
+  &.d-100
+    animation: grass 4s 0.1s infinite linear
+    bottom: -40px
+    margin: 0px 0px
+    background-position: center bottom
+    background-size: auto 101%
+    height: 160px
+    &:after
+      height: 0px
+
+@keyframes grass
+  0%
+    transform: rotateZ(0deg) translate3d(0, 1%, 0) rotateZ(0deg)
+
+  100%
+    transform: rotateZ(360deg) translate3d(0, 1%, 0) rotateZ(-360deg)
+
+@keyframes tree
+  0%
+    transform: translate3d(5%, 0, 0) rotateZ(0.2deg)
+
+  100%
+    transform: translate3d(-5%, 0, 0) rotateZ(-0.2deg)
+
+@keyframes move-clouds-back
+  from
+    background-position: 0 0
+
+  to
+    background-position: 10000px 0
+
+@keyframes orbit
+  from
+    transform: rotate(0deg)
+
+  to
+    transform: rotate(-360deg)
+
+$color: #fff
+$size: 40px
+$border: calc($size / 25)
+
+.sound
+  width: $size
+  height: $size
+  cursor: pointer
+  display: inline-block
+  position: fixed
+  bottom: 5px
+  right: 5px
+  z-index: 250
+  opacity: 0.2
+  &-icon
+    color: $color
+    width: 75%
+    height: 100%
+    line-height: 100%
+    font-size: $size
+    display: block
+    margin: auto
+  &-wave
+    position: absolute
+    border: $border solid transparent
+    border-right: $border solid $color
+    border-radius: 50%
+    transition: all 200ms
+    margin: auto
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    &_one
+      width: 50%
+      height: 50%
+    &_two
+      width: 75%
+      height: 75%
+  &-mute .sound-wave
+    border-radius: 0
+    width: 50%
+    height: 50%
+    border-width: 0 $border 0 0
+    &_one
+      transform: rotate(45deg) translate3d(0, -50%, 0)
+    &_two
+      transform: rotate(-45deg) translate3d(0, 50%, 0)
+
+// -- WORKS --
+$color: #8238A7 //Theme skin
+$text_color: #888
+$main_color: #222
+$bg_light: #FAFAFA
+$background: #fefefe
+$text: #4b507a
+
+$cyan: #60daaa
+$yellow: #fbca67
+$orange: #ff8a30
+$red: #f45e61
+$purple: #6477b9
+$blue: #0eb7da
+
+@mixin kerning($kerning)
+  letter-spacing: $kerning + px
+
+body.isworks
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.75
+  opacity: 1
+  background: #000
+  -webkit-font-smoothing: antialiased
+  text-rendering: optimizeLegibility
+  overflow-x: hidden
+
+.star-blink
+  position: absolute
+  width: 7px
+  height: 7px
+  background-color: #b6cbd4
+  border-radius: 50%
+  z-index: 0
+  transform: rotate(0deg) scale(0.08)
+  backface-visibility: hidden
+  animation: blinkAfter 15s infinite ease-out
+  div
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    transform: rotate(45deg) scale(0.75)
+    box-shadow: 0 0 2px 8px rgba(0, 0, 0, 0.4), 0 0 2px 9px rgba(255, 255, 255, 0.07), 0 0 2px 15px rgba(0, 0, 0, 0.4), 0 0 2px 16px rgba(255, 255, 255, 0.1)
+    backface-visibility: hidden
+  &:after, &:before
+    content: ''
+    position: absolute
+    display: block
+    top: -350%
+    left: 45%
+    height: 800%
+    width: 10%
+    border-radius: 50%
+    background-color: #b6cbd4
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.1) 100%)
+    z-index: 1
+    box-shadow: 0 0 25px white
+    backface-visibility: hidden
+  div
+    &:after, &:before
+      content: ''
+      position: absolute
+      display: block
+      top: -350%
+      left: 45%
+      height: 800%
+      width: 10%
+      border-radius: 50%
+      background-color: #b6cbd4
+      background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.7) 50%, rgba(255, 255, 255, 0.1) 100%)
+      z-index: 1
+      box-shadow: 0 0 25px white
+      -webkit-backface-visibility: hidden
+  &:before, div:before
+    -webkit-transform: rotate(90deg)
+  &.blue
+    &:after, &:before
+      box-shadow: 0 0 25px blue
+    div
+      &:after, &:before
+        box-shadow: 0 0 25px blue
+  &.red
+    &:after, &:before
+      box-shadow: 0 0 25px red
+    div
+      &:after, &:before
+        box-shadow: 0 0 25px red
+
+@keyframes blinkAfter
+  0%
+    transform: rotate(0deg) scale(0.08)
+  4%
+    transform: rotate(-20deg) scale(0.9)
+  8%
+    transform: rotate(-40deg) scale(0.08)
+  50%
+    transform: rotate(-40deg) scale(0.08)
+  52%
+    transform: rotate(-50deg) scale(0.3)
+  54% 
+    transform: rotate(-60deg) scale(0.08)
+  100% 
+    transform: rotate(0deg) scale(0.08)
+
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.portfolio
+  position: relative
+  padding: 30px 0
+  top: 0
+  display: inline-block
+  overflow-y: visible
+  padding: 70px 0 90px
+  li
+    color: $text_color
+    +kerning(2)
+  li.active
+    color: #fff
+    border-bottom: 1px solid $color
+  h2
+    text-align: center
+    font-size: 24px
+    text-transform: uppercase
+    margin: 0 0 15px
+    letter-spacing: 1px
+    font-family: 'Open sans', sans-serif
+    font-weight: 300
+    color: #fff
+    text-shadow: 1px 1px 20px hsla(0, 100%, 100%, 0.3)
+  ul,
+  li
+    list-style-type: none
+    padding: 0
+    margin: 0
+    text-align: center
+  li
+    display: inline-block
+    margin: 0 10px
+    text-transform: uppercase
+    font-size: 12px
+    cursor: pointer
+    line-height: 2
+    color: $text_color
+    +kerning(2)
+  ul
+    margin-bottom: 50px
+
+.portfolio_item
+  display: none
+  padding: 0
+  a
+    color: $color
+  img
+    width: 100%
+  .port_item_cont
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,.8)
+    text-align: center
+    padding-top: 15%
+    opacity: 0
+    transition: all .5s
+  &:hover .port_item_cont
+    opacity: 1
+    padding-top: 20%
+  h3
+    color: #fff
+    margin-bottom: 0
+  button
+    background: none
+    border: 0
+    box-sizing: border-box
+    margin-top: 40px
+    padding: 0.5em 2em
+    box-shadow: inset 0 0 0 2px $red
+    color: $red
+    font-size: inherit
+    font-weight: 700
+    position: relative
+    vertical-align: middle
+    &::before,
+    &::after
+      box-sizing: inherit
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100%
+  .draw
+    -webkit-transition: color 0.25s
+    transition: color 0.25s
+    &::before, &::after
+      border: 2px solid transparent
+      width: 0
+      height: 0
+    &::before
+      top: 0
+      left: 0
+    &::after
+      bottom: 0
+      right: 0
+    &:hover
+      color: #60daaa
+      &::before, &::after
+        width: 100%
+        height: 100%
+      &::before
+        border-top-color: #60daaa
+        border-right-color: #60daaa
+        -webkit-transition: width 0.25s ease-out, height 0.25s ease-out 0.25s
+        transition: width 0.25s ease-out, height 0.25s ease-out 0.25s
+      &::after
+        border-bottom-color: #60daaa
+        border-left-color: #60daaa
+        -webkit-transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s
+        transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s
+
+.podrt_descr
+  background-color: #fff
+  max-width: 500px
+  margin: auto
+  p,
+  h3
+    padding: 20px
+    padding-bottom: 0
+  h3
+    margin-bottom: 0
+    text-align: center
+    text-transform: uppercase
+    font-weight: 400
+    margin-top: 20px
+    padding-top: 25px
+  p
+    margin-top: 0
+  img
+    width: 100%
+    margin-top: 10px
+
+.modal-box-content
+  position: relative

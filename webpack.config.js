@@ -34,6 +34,12 @@ module.exports = {
     filename: 'js/[name].js',
     path: environment.paths.output,
   },
+  stats: {
+    colors: true,
+    modules: true,
+    reasons: true,
+    errorDetails: true
+  },
   module: {
     rules: [
       {
